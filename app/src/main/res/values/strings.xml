@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuantumIncremental</string>
+    <string name="app_name">Quantum Incremental</string>
     <string name="VP_tabName">ВЧ</string>
-    <string name="VP_clickToGen">Нажать ля создания частицы</string>
+    <string name="VP_clickToGen">Нажать для создания частицы</string>
 </resources>

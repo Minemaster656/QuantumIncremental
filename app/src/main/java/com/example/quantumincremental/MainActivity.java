@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.vp_tab_open);
 
         button.setOnClickListener(v -> VP_openFrg());
+        Calcs.ct.start();
+//        Calcs.ut.start();
     }
     public void VP_openFrg(){
         getSupportFragmentManager().beginTransaction().replace(R.id.container, new VP_Frg()).commit();
