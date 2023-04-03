@@ -16,6 +16,8 @@ public class VP_Frg extends Fragment {
 
     Button VPClick_Btn;
     TextView VPCount_Txt;
+    TextView VCCount_Txt;
+    Button VPDelayUpdate_Btn;
     int counter=0;
     Handler handler = new Handler(){
         @Override
@@ -27,9 +29,12 @@ public class VP_Frg extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         VPCount_Txt = view.findViewById(R.id.VP_count);
+        VCCount_Txt = view.findViewById(R.id.VC_count);
+        VPDelayUpdate_Btn = view.findViewById(R.id.VP_delayUpgrade);
         VPClick_Btn = view.findViewById(R.id.clickMe_vp);
 
         VPClick_Btn.setOnClickListener(v -> vars.VP+=vars.VP_perClick); //vars.VP+=vars.VP_perClick
+        VPDelayUpdate_Btn.setOnClickListener(v -> CL_VPDelayUpdate());
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -57,9 +62,22 @@ public class VP_Frg extends Fragment {
     }
     public void Update_VP(){
         VPCount_Txt.setText(Double.toString(vars.VP));
+        VCCount_Txt.setText(Double.toString(vars.VCl));
         counter++;
+        VPDelayUpdate_Btn.setText(getResources().getString(R.string.VPUpdate_delay)+ "\n"+ getResources().getString(R.string.word_cost)+": "+Double.toString(vars.VP_delayUpd_cost));
         if (counter>=vars.FPS){
 
+        }
+        if (counter>=vars.FPS*(vars.VP_delay+0.5) & !vars.isVPBroken){
+            vars.VP/=vars.VP_dvn;
+            counter=0;
+        }
+    }
+    void CL_VPDelayUpdate(){
+        if (vars.VCl >= vars.VP_delayUpd_cost){
+            vars.VP_delay++;
+            vars.VCl-=vars.VP_delayUpd_cost;
+            vars.VP_delayUpd_cost*=2;
         }
     }
 }

@@ -2,4 +2,6 @@
     <string name="app_name">Quantum Incremental</string>
     <string name="VP_tabName">ВЧ</string>
     <string name="VP_clickToGen">Нажать для создания частицы</string>
+    <string name="VPUpdate_delay">Увеличить время существования частиц</string>
+    <string name="word_cost">стоимость</string>
 </resources>
