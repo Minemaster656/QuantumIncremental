@@ -1,10 +1,8 @@
-package com.example.quantumincremental;
+package com.dti_mn.quantumincremental;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentContainerView;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {

@@ -4,4 +4,6 @@
     <string name="VP_clickToGen">Нажать для создания частицы</string>
     <string name="VPUpdate_delay">Увеличить время существования частиц</string>
     <string name="word_cost">стоимость</string>
+    <string name="VPUpgrade_divison">Уменьшить делитель частиц</string>
+    <string name="VPUpgrade_cp">Увеличить силу клика</string>
 </resources>

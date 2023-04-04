@@ -1,4 +1,4 @@
-package com.example.quantumincremental;
+package com.dti_mn.quantumincremental;
 
 import org.junit.Test;
 
